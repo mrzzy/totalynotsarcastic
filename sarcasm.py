@@ -20,33 +20,26 @@ if __name__ == "__main__":
     # Load and preprocess data
     labels, texts = load_data(2e+5)
     
-    inputs = texts
-    outputs = labels
-    train_inputs, train_outputs, test_inputs, test_outputs = \
-            split_test_train(inputs, outputs)
+    # TODO: split the data into test and train
+    
 
     # Prepares text data for machine learning: 
-    # Performs feature extraction, followed by feature extraction into one hot ecoded
-    # sparse vectors using inverse document frequency.  
-    vectorizer.fit(train_inputs)
-    train_inputs = vectorizer.transform(train_inputs)
+    # Performs feature extraction, followed by feature extraction into one hot 
+    # ecoded sparse vectors using inverse document frequency.
+    # TODO: Transform the text/strings into vectors
 
     # Train the classifier
     classifier = MultinomialNB()
-    classifier.fit(train_inputs, train_outputs)
+        
+    # TODO: train the classifer using training data
     
     # Test the classfier
-    test_inputs = preprocess_text(test_inputs)
-    test_predicts = classifier.predict(test_inputs)
+    # TODO: test the classifer by using the classifier to predict outputs for the 
+    # test inputs. Then check answers and output the percent the the classifer 
+    # got correct.
 
-    n_correct = 0
-    for prediction, answer in zip(test_predicts, test_outputs):
-        if prediction == answer:
-            n_correct += 1
     
-    print("Result:", n_correct/len(test_outputs) * 100.0)
-    
-    # Prompt to allow the studnets to try the program
+    # Prompt client to allow the students to try the program
     try:
         while True:
             statement = input("> ")

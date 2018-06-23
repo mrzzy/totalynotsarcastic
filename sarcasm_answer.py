@@ -36,7 +36,7 @@ if __name__ == "__main__":
     classifier.fit(train_inputs, train_outputs)
     
     # Test the classfier
-    test_inputs = preprocess_text(test_inputs)
+    test_inputs = vectorizer.transform(test_inputs)
     test_predicts = classifier.predict(test_inputs)
 
     n_correct = 0
