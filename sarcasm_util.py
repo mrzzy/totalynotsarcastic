@@ -10,7 +10,7 @@ import random
 import math
 
 # Loads data from CSV into a list of labels and a list of text data
-def load_data(len_limit=None, filepath="./data/train-balanced-sarcasm.csv"):
+def load_data(len_limit=None, filepath="./data/subset_data.csv"):
     with open(filepath, "r") as f:
         labels = []
         texts = []

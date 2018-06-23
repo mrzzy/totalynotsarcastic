@@ -18,7 +18,7 @@ vectorizer = TfidfVectorizer(ngram_range=(1, 2), stop_words=None)
 
 if __name__ == "__main__":
     # Load and preprocess data
-    labels, texts = load_data(2e+5)
+    labels, texts = load_data()
     
     # TODO: split the data into test and train
     
