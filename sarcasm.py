@@ -4,11 +4,6 @@
 # Scikit-Learn/Naive Bayes Edition
 #
 
-import numpy as np
-import csv
-import random
-import math
-
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -39,10 +34,14 @@ if __name__ == "__main__":
     # got correct.
 
     
-    # Prompt client to allow the students to try the program
+    # Prompt to allow the students to try the program
     try:
+        print("Type 'quit' or 'exit' to exit")
         while True:
             statement = input("> ")
+            if statement == "quit" or statement == "exit":
+                break
+
             inputs = vectorizer.transform([ statement ])
             predicts = classifier.predict(inputs)
             prediction = predicts[0]
@@ -51,5 +50,5 @@ if __name__ == "__main__":
                 print("Not Sarcastic")
             else:
                 print("Sarcastic")
-    except EOFError:
+    except (EOFError, KeyboardInterrupt):
         pass
